@@ -1,0 +1,640 @@
+<!--Estudantes: Julia Pavan & Willian Bongiovanni
+Turma: Informática III
+Unidade Curricular: Programação WEB 
+-->
+
+
+<!--
+Construção de uma página WEB
+* Nesse arquivo estará disposto a estruturação, elucidando cada parte com suas regras e critérios;
+-->
+
+
+<!--
+Inicialmente, faz-se necessário abordar as tags básicas, ou seja, elementos fundamentais na construção de uma página WEB. Em primeiro plano, para a identificação do navegador é necessário criar a linha de código "<!DOCTYPE html>", indicando que se trata de um documento HTML.
+-->
+
+<!DOCTYPE html>
+
+<!--
+Subsequentemente, é utilizada a tag "<html>" é chamada de “etiqueta de abertura”. Enquanto ao final, a tag "</html>" é chamada de “etiqueta de fechamento”. Dentro da tag <html> teremos outras duas tags conhecidas como <head>(cabeçalho) e, <body> (corpo).
+-->
+
+<html>
+
+<!--
+A <head> delimita o cabeçalho do documento. Não possui nenhum valor visível, porém é capaz de transmitir ao navegador diversas informações muito úteis e essenciais a uma boa apresentação do seu documento HTML. Isto é, armazena as informações de uma página do seu site, como o título, por exemplo, contudo os usuários que estiverem navegando pelo seu website não verão o que existe na tag head.
+-->
+
+<head>
+
+<!--
+A tag <meta/> permite inserir metadados (dados sobre outros dados) ao seu documento,por exemplo , a informação charset='UTF-8', que garante a compatibilidade do código com os caracteres de padrão latino americano.
+-->
+  
+  <meta charset='UTF-8'/>
+
+<!--
+ A tag <title>, como o próprio nome condiz, define o título da sua página. Esse nome que aparecerá na sua aba, janela ou guia. Nesse caso, o título que aparecerá na aba/guia/janela dessa página será Avaliação PWEB
+-->
+  
+  <title>Avaliação PWEB</title>
+  
+<!--
+ A tag <link/>, geralmente, apresenta uma relação entre o documento e um recurso externo que o programador deseja inserir. Em muitos casos, o uso desse elemento se faz através do vínculo com as folhas de estilo.
+
+  Vamos a explicação de ambos os links abaixo:
+
+* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  &  <link rel='stylesheet' href='style.css'/>
+   a) Primeiramente, o atributo rel="stylesheet" -> O atributo "rel" deriva de 
+ "relationship", que serve para você dizer qual o relacionamento do arquivo que o programador quer utilizar com o documento atual. Quando se coloca o rel="stylesheet", basicamente, você está dizendo que o arquivo importado é o arquivo responsável pelo estilo da sua página.
+
+  b)Enquanto isso, o atributo href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"e/ou href='style.css, condiz com localização (URL) do recurso externo ou a localização de uma página styles, no próprio projeto.
+
+  OBS: O link: <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> está importando os ícones dispostos no documento, como na barra de navegação, por exemplo.
+-->
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+<link rel='stylesheet' href='style.css' />
+
+
+  
+</head>
+
+<!--
+Finalmente, a tag <body>, aquela que representa o "corpo" do documento na estruturação. Em resumo, nessa tag deverão ser inseridos todos os elementos visíveis do site.
+-->
+  
+<body>
+  
+<!-- 
+Visando construir a página de modo organizado, optamos em subdivir todas em estruturas em classes, o que em nosso ver, facilita o processo de montagem e, inclusive, de aprendizagem.
+-->
+  
+<!-- 
+Estaremos listando todas as regras e propriedades utilizadas ANTES da apliação dessas em cada parte da página.
+-->
+
+<!-- Parte 01 -->
+  
+<!-- 
+Para construir a barra de navegação, utlizamos do recurso da criação de classe.
+A tag <div> é frequentemente usado como um container para outros elementos, para facilitar a estilização dos blocos. 
+Além disso, pode ser utilizado para agrupar elementos para fins de estilos (utilizando class ou id).
+Nesse caso, a primeira classe/container é a correspondente por todo o espaço utilizado pela navbar. Subsequentemente, a casse "menu" corresponde ao escopo das opções clicáveis na barra de navegação.
+Após, dividimos os escopos/espaço de utilização de cada opção clicável para redirecinamento na página como home,about,portfolio,contact... 
+-->
+
+<!-- 
+Para que as classes clicáveis sejam eficientes no redicionamento na página utilizamos a tag <a>.
+O elemento <a> (âncora), utiliza do atributo href para criar uma hiperligação nas páginas web, arquivos, endereços de emails, ligações na mesma página ou endereços na URL. Nesse caso, utilizamos os "IDs" das classes mais abrangentes/maiores de cada parte da página que o assunto corresponde.
+-->
+
+<!-- 
+Colocamos ícones em cada classe clicável, utilizando a tag <i>.
+Tanto os elementos <i> e <span> são amplamente usados para adicionar ícones.
+-->
+<!-- 
+OBS: na tag <a href="#">, o endereço da URL corresponde ao início da página.
+-->
+<!-- 
+A escrita visível para o usuário a página está localizada entre a tag <a>, no entanto, não é uma tag de parágrafo, como será apresentado adiante.
+-->
+
+  <!--Barra de navegação-->
+  <div class='menu-navBar'>
+    <div class='menu' id="navBar">
+      <div class='home'><a href="#">HOME</a></div>
+
+      <div class='about'><a href="#about">
+          <i class=iconeAbout>
+          </i>
+          ABOUT</a></div>
+
+      <div class='portfolio'><a href="#portfolio">
+          <i class=iconePorfolio>
+          </i> PORTFOLIO</a></div>
+
+      <div class='contact'><a href="#contact">
+          <i class=iconeContact>
+          </i>
+          CONTACT</a></div>
+
+      <div class='pesquisar'>
+        <a href="#">
+          <i class=iconePesquisar>
+          </i>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+<!-- 
+Perceba ao final dessa estrutura da página o fechamento das tags, principalmentes de cada <div>. Para que a estrutura seja correta e não fique desproporcional  ao desejado, é necessário o fechamento correto das DIVs. 
+-->
+
+ <!-- Parte 02 -->
+<!-- 
+Prosseguindo, estaremos inserindo a primeira imagem de fundo, que será editada no CSS.
+-->
+<!-- 
+Essa imagem está localizada em uma pasta("images"), com as ademais imagens dispostas pelo site.
+-->
+<!-- 
+Novamente, fizemos utilização do recurso da tag <div> criando classes editáveis no CSS.
+
+  Além disso, faz-se necessário comentar a utilização do  id="home", já que como estamos trabalhando com uma barra de navegação de redirecionamento para determinadas seções do site, o id serve para especificar que essa seção será selecionada ao ser clicada na parte HOME da barra de navegação.
+-->
+<!-- 
+A tag <span>, utilizada para construir o título, é muito similar com o elemento <div>, entretando a tag <div> é um elemento de nível de bloco, enquanto a tag <span> é um elemento em linha.
+-->
+  
+                <!-- Primeira Imagem de Fundo -->
+  <div class="fundo-container" id="home">
+    <div class='fundo'>
+  <!--Título -->
+  <span class="titulo">
+  MY
+  <span class="tituloWebsite">WEBSITE</span>
+  LOGO
+    </span>
+  </div>
+  </div>
+<!--
+Novamente, o fechamento das tags está sendo disposto em ordem de abrangência, ou seja, a primeira <div> aberta deve ser a última a ser fechada, para que o espaço de montagem das informações encontradas não esteja desconfigurado.
+  -->  
+
+<!-- Parte 03 --> 
+  
+<!--
+  Nessa seção, estaremos desenvolvendo o container "ABOUT ME". Para isso, novamente foi criado um escopo maior e, depois foram criados escopos menores para inserir as informações em partes. Esses escopos são delimitados pelas tags <div>.
+ Além de que, faz-se necessário comentar a utilização do  id="about". Esse ID serve para especificar que essa seção será selecionada ao ser clicada na parte ABOUT da barra de navegação.
+-->  
+  
+<!--Container About-->
+  <div class="about-container" id="about">
+    
+<!--Título-->
+    <div class="titulo-about">
+     ABOUT ME
+    </div>
+    
+<!--Subtítulo:
+    
+a)Ao invés de utilizar uma classe, utilizamos a tag <p>, isto é, um parágrafo. Em HTML, parágrafos são usados para agrupar conteúdos relacionados de qualquer tipo, como imagens e campos de um formulário. Basicamente, é um elemento em linha, ao contrário da <div>, um elemento em bloco.
+
+b)O elemento <em> geralmente é utilizado para aplicar o estilo itálico.
+--> 
+  <p class="textCentro">
+    <em>I love photography</em>
+  </p>
+    
+<!--Texto:
+O elemento <p>, isto é, um parágrafo está sendo utilizado nessa seção do texto, para destacar que essa parte se trata de um elemento de linha, não de bloco.
+-->   
+      <p>
+        We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+
+<!--Parte 04-->
+    
+ <!--Perfil:
+Nesse capítulo, montamos o pequeno título e a imagem do "perfil" da seção ABOUT ME.
+    Primeiramente, definimos o escopo "maior" para montarmos cada partezinha dessa seção. Subsequentemente, utilizamos as tags <div> para delimitar o espaço do título acima da imagem, e para delimitar o espaço da imagem.
+-->    
+    
+  <div class="perfil">
+    <div class="imgperfil">
+      <!--Parágrafo:
+  Nesta parte, utilizaremos do recurso do parágrafo para escrever o título desse escopo.
+-->  
+      <p>
+<!--A tag <b> em HTML é usada para especificar o texto em negrito sem qualquer importância extra. O texto é escrito dentro da exibição da tag <b> em negrito
+-->   
+      <b>
+<!-- 
+A tag <i> está sendo utilizada para representar a utilização de ícones. 
+-->
+        
+        <i class="iconePerfil">
+        </i>
+        My name
+      </b>
+      </p>
+<!-- 
+A tag <br> sinaliza uma quebra de linha.
+-->
+      <br>
+
+<!--Imagem:
+A tag <img> representa a inserção de uma imagem no documento.
+
+Elementos dessa tag:
+      
+      a) src = "" -> especifica o caminho para a imagem
+      b) alt = "" -> especifica um texto alternativo para a imagem, se a imagem por motivo não pode ser exibido algum outro motivo, como por exemplo, para pessoas com necessidades especiais ou, algum tipo de deficiência visual.
+
+Enquanto isso, as propriedades height e width são usadas para definir a altura e a largura de um elemento, respectivamente.
+-->      
+      <img src="./images/avatar_hat.jpg" class="imagemDoPerfil" alt="Imagem de Perfil" width="500" height="333">
+    </div>
+    <div class="textLado">
+      <p>
+        Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure
+        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing
+        elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </div>
+  </div>
+<br>
+<br>
+<br>
+
+    
+<!--Parte 05-->
+<!-- 
+Nessa seção do ABOUT ME, estaremos organizando as porcentagens de como o ser responsável pela página se caracteriza.
+
+    Primeiramente, definimos o título através de uma <div>, em sequência montamos as partes do subtítulos de cada barra de porcentagem e os ícones.
+-->
+  <div class="tituloPorcentagem">
+      Im really good at:
+  </div>
+    
+<!-- 
+A tag <p> está sendo utilizada para construir o título dessa porcentagem em questão, além disso, utiliza-se da tag <i> para dispor de um ícone em conjunto à escrita. Em ambas as 3 características da pessoa do site a regra que utilizamos é a mesma.
+-->
+  <p class="photography">
+  <i class="iconeCamera">
+  </i>
+      Photography
+    </p>
+ <!-- 
+Nesta parte, construimos a barra de porcentagem. Para isso criamos um escopo (<div>), primeiramente, para a barra de porcentagem inteira, após, outra <div> para o preenchimento dessa barra. Novamente, nas 3 barras construídas o recurso utilizado foi o mesmo.
+-->
+  <div class="barraPorcentagem1">
+    <div class="preenchimento1">
+      90%
+    </div>
+  </div>
+
+  <p class="webDesign">
+     <i class="iconeComputador">
+  </i>
+      Web Design
+  </p>
+  
+  <div class="barraPorcentagem2">
+    <div class="preenchimento2">
+      85%
+    </div>
+  </div>
+
+  <p class="photoshop">
+      <i class="iconePintura">
+  </i>
+      Photoshop
+  </p>
+ 
+  <div class="barraPorcentagem3">
+    <div class="preenchimento3">
+      75%
+    </div>
+  </div>
+  </div>
+
+<!--Parte 06
+Barra das Informações--->
+
+<!--
+Nessa seção, montamos a faixa cinza das informações dispostas no site. Para isso, criamos um escopo maior/classe mãe, para após inserir as infromações, cada qual em sua <div>, ou seja, no seu espaço da classe/escopo.
+-->
+  <div class="informacoes">
+    
+    <div class="partnerts">
+<!--
+Utilizamos a tag <span> por se tratar de um elemento de linha, ao contrário da <div>
+-->
+      <span class="numPartnerts">14+</span>
+<!--
+O elemento <br> se trata proporciona uma quebra de linha
+-->
+      <br>
+      Partners
+    </div>
+
+    <div class="projects">
+      <span class="numProjects">55+</span>
+<!--
+O elemento <br> se trata proporciona uma quebra de linha
+-->
+      <br>
+      Projects Done
+    </div>
+
+    <div class="clients">
+      <span class="numClients">89+</span>
+<!--
+O elemento <br> se trata proporciona uma quebra de linha
+-->      
+      <br>
+      Happy Clients
+    </div>
+
+    <div class="meetings">
+      <span class="numMeetings">150+</span>
+<!--
+O elemento <br> se trata proporciona uma quebra de linha
+-->
+      <br>
+      Meetings
+    </div>
+  </div>
+
+<!--Parte 07
+Imagem do Portfolio-->
+
+<!--
+Primeiramente, delimitamos a classe mãe dessa seção, com um escopo maior. Nessa classe será inserida a imagem. Após, será definida a <div> do título, com uma tag <span> por ser elemento de linha.
+-->
+
+  <div class="imgPortfolio">
+<!--Título-->
+    <div class="tituloPortfolio">
+      <span class="port">
+        PORTFOLIO
+        <br/
+      </span>
+    </div>
+  </div>
+
+<!--Parte 08
+Container MY WORK-->  
+
+ <!--Em primeiro plano, cria-se uma <div> que englobe todo o escopo da seção para após ser subdivida em partes, ou seja, outras <div>.
+Imagem do Portfolio--> 
+  
+  <div class="myWork" id="portfolio">
+    
+<!--Título:
+Utilizamos da tag <h3>, parte da "família" <h1>,<h2>,..., para construir o título MY WORK. Esse tipo de elemento é muito utilizado para destacar títulos e subtítulos de uma página.
+-->    
+    
+    <h3 class="tituloMyWork">MY WORK</h3>
+    
+<!--Subtítulos:
+Na primeira parte, a utilização do elemento <p> para destacar a escrita do subtítulo como um bloco de linha, e após, o elemento <em> para simbolizar que estamos impondo uma característica do tipo itálico nesse texto.
+-->     
+    <p class="subtituloMyWork">
+      <em>
+        Here are some of my latest lorem work ipsum tipsum.
+<!--
+O elemento <br> se trata proporciona uma quebra de linha
+-->  
+        <br>
+        Click on the images to make them bigger
+      </em>
+    </p>
+<!--
+O elemento <br> se trata proporciona uma quebra de linha
+-->  
+    <br>
+    
+<!--Parte 09
+Container MY WORK - Imagens -->  
+
+<!--
+Como o site possui duas linhas com 4 imagens em cada, optamos em dividir dois escopos de linha, isto é, criamos duas classes, uma para cada linha.    
+-->      
+
+  <div class='imagens'>
+  <div class='grupoimagens'>
+
+<!--
+Para cada imagem dessa linha foi criado uma classe para melhor estilizá-la. Ambas as 4 imagens possuem a URL de localização dessa imagem, que está em uma pasta do próprio projeto. Além do atributo alt, que especifica um texto alternativo para a imagem, se a imagem por motivo não pode ser exibido algum outro motivo, como por exemplo, para pessoas com necessidades especiais ou, algum tipo de deficiência visual.
+-->  
+<!--
+É importante ressaltar o método de "entrada" nessa pasta das imagens. Primeiramente, utilizamos o ponto(.) para acessar a pasta, seguindo de uma barra(/), o nome da pasta(images), outra barra(/), o nome do arquivo(na primeira imagem, por exemplo, p1)e,a extensão do arquivo(.jpg).
+-->  
+<!-- Esses mesmos critérios citados acima serão utilizados em ambas as linhas de imagens.-->
+    
+    
+      <div class="imagens-item">
+        <img src="./images/p1.jpg" class="small_img"  >
+      </div>
+
+      <div class="imagens-item">
+        <img src="./images/p2.jpg" class="small_img"  >
+      </div>
+
+      <div class="imagens-item">
+        <img src="./images/p3.jpg" class="small_img" >
+      </div>
+
+      <div class="imagens-item">
+        <img src="./images/p4.jpg" class="small_img" >
+      </div>
+  </div>
+    <div class='grupoimagens2'>
+      <div class="imagens-item">
+        <img src="./images/p5.jpg" class="small_img"  >
+      </div>
+
+      <div class="imagens-item">
+        <img src="./images/p6.jpg" class="small_img" >
+      </div>
+
+      <div class="imagens-item">
+        <img src="./images/p7.jpg" class="small_img">
+      </div>
+
+      <div class="imagens-item">
+        <img src="./images/p8.jpg" class="small_img"  >
+      </div>
+    </div>
+<!-- Finalizando essa seção, estamos utilizando uma classe em formato de botão. A tag <button>, como o prórpio nome diz, representa um botão clicável.
+-->
+    <div class="botaoLOAD">
+       <button  class="btn btn-light"> 
+        LOAD MORE
+      </button> 
+    </div>
+</div>
+  </div>
+    </div>
+
+<!--Parte 10
+Imagem do Contact-->  
+
+<!--
+Primeiramente, delimitamos a classe mãe dessa seção, com um escopo maior. Nessa classe será inserida a imagem. Após, será definida a <div> do título, com uma tag <span> por ser elemento de linha.
+-->
+  <div class="imgContact">
+<!--Título-->
+  <div class="partContact">
+      <span class="tituloContact">CONTACT</span>
+    </div>
+  </div>
+
+<!--Parte 11
+Container WHERE I WORK -->  
+  <!--Em primeiro plano, criamos uma <div> que abrangia todo o escopo da seção para após ser subdivida em outros escopos, ou seja, outras <div>.
+--> 
+<div class='where-container'> 
+      <div class='where-page'>
+      <div class='titulo1'>
+        <h3 class="tituloWhere">WHERE I WORK</h3>
+
+<!--Subtítulos:
+Na primeira parte, a utilização do elemento <p> para destacar a escrita do subtítulo como um bloco de linha, e após, o elemento <em> para simbolizar que estamos impondo uma característica do tipo itálico nesse texto.
+--> 
+    
+    <p class="subtitulo1">
+      <em>I'd love your feedback!</em>
+    </p>
+      </div>
+      <div class='img-where'>
+      <img src="./images/map.jpg" class="imageMap" alt="Mapa"></div>
+      <div class='where-text'>
+       
+  <div class='where-local'>
+    
+      <div class="localizacao">
+        <div class="localizacao-text">
+  <!-- 
+O elemento <i>  é utilizado para adicionar ícones.
+-->
+        <i class="bussola">
+        </i>
+         Chicago, US
+<!--
+O elemento <br> se trata proporciona uma quebra de linha
+-->  
+        <br>
+        <i class="telefone">
+        </i>
+         Phone: +00 151515
+<!--
+O elemento <br> se trata proporciona uma quebra de linha
+-->  
+        <br>
+
+        <i class="email">
+        </i>
+         Email: mail@mail.com
+<!--
+O elemento <br> se trata proporciona uma quebra de linha
+--> 
+        <br>
+      
+ <!--     
+A utilização do elemento <p> faz-se pela necessidade de escrever um breve texto, ou seja, dessa forma, estamos aplicando um elemento de linha --> 
+      <p>
+        Swing by for a cup of
+ <!-- 
+O elemento <i>  é utilizado para adicionar ícones.
+-->
+        <i class="iconeCafe"></i>
+        , or leave me a note:
+
+      </p>
+        </div>
+<!--Container - Formulário
+O elemento <form> é usado para criar um formulário HTML para entrada do usuário.
+  a)O atributo <target> especifica um nome ou uma palavra-chave que indica onde exibir a resposta recebida após o envio do formulário. Neste caso, está em branco.
+-->      
+      <form action="Form.html" target="_blank" class="form">
+
+<!--
+A <div> label especifica qual o "rótulo" do input (a que se refere o input). Além disso, está sendo estilizado a margem dessa lacuna do formulário através do atributo "style=margin:..."
+-->
+        <div class="label" style="margin:5px -16px 8px -16px">
+
+ <!--
+  Enquanto isso, a classe input corresponde ao campo em que a informação será enviada ao ser escrita.
+Um elemento <input> pode ser exibido de várias maneiras, dependendo do type(atributo). Nesse caso, o "type=text" exibe um campo de entrada de texto de linha única. O atributo "placeholder=..." especifica uma dica curta que descreve o valor esperado de um campo de entrada. Enquanto o "required name=..." especifica que este campo necessita ser preenchido para o funcionamento do formulário.
+
+    Em ambos os inputs abaixo a regra de recursos e elementos se assemelha.
+
+  Para a aplicação de estilo nos formulários, foi usado a tag "style=" no HTML, nos quais estão executando as seguintes:
+          width: 45.5%; - define uma largura que ocupará o espaço disponível, mas de acordo com o valor definido. -
+          height: 35px; - define uma altura que ocupará o espaço disponível, mas de acordo com o valor definido.
+          margin: 10px 0 0 10px; -define a área de margem nos quatro lados do elemento.
+-->         
+          <input type="text" placeholder=" Name" required name="Name" style="width: 45.5%; height: 35px; margin: 10px 0 0 10px; ">
+          <input type="text" placeholder=" Email" required name="People" style="width: 45.5%; height: 35px;">
+        <br>
+        <input type="text" placeholder=" Message " required name="Message" style="width: 92.4%; height: 35px; margin: 10px 0 0 10px; padding: 2px">
+          <br>
+        
+        <button type="submit" style="margin: 10px 0 0 71%; background-color:#000; color: #fff; padding: 3px;"> <i class="enviar"></i> SEND MESSAGE</button>
+        <br>
+</form>
+  </div>
+    </div>
+      </div>
+        </div>
+          </div> 
+      
+<!--Parte 12:
+ Footer -->
+  
+<!-- A tag<footer> define um rodapé para um documento ou seção.-->
+  
+  <footer class="rodape">
+    
+<!-- Seguindo, teremos uma âncora de redirecionamento para o topo da página, isto é, a seção HOME, por esse motivo utilizamos a URL hrel="", que simboliza o início da página.--> 
+    
+    <a class="toTheTop" href="">
+  <!-- 
+O elemento <i>  é utilizado para adicionar ícones.
+-->
+      <i class="iconeSeta"></i>
+      To the top
+    </a>
+ <!-- Criamos uma classe para adicionar os ícones das redes sociais no rodapé-->    
+    <div class="iconesRedesSociais">
+      
+<!--  Todos os elementos <i> são utilizados para adicionar ícones.
+-->
+      <i class="facebook"></i>
+      <i class="instagram"></i>
+      <i class="snapchat"></i>
+      <i class="pinterest"></i>
+      <i class="twitter"></i>
+      <i class="linkedin"></i>
+    </div>
+    
+<!-- Perto do fim, utilizamos da tag<p>, de parágrafo, para escrever o breve texto final sobre quem foi desenvolvido o site em questão, uma espécie de referência, neste caso, colocamos duas âncores com o link do GitHub de cada aluno, através da URL no href="...", além de que utilizamos do target especificando um nome ou uma palavra-chave, que no caso não existe, ou está em branco.
+-->
+    <p>
+      Powered by
+<!-- Links github-->
+      <a href="https://github.com/julitaXD" target="_blank" class="powered">Julia</a>
+      and
+      <a href="https://github.com/Will448" target="_blank" class="powered">Willian</a>
+    </p>
+  </footer>
+  
+<!-- Perto do fim, utilizamos a tag<p>, de parágrafo, para escrever o breve texto final sobre quem foi desenvolvido o site em questão, uma espécie de referência, neste caso, colocamos duas âncores com o link do GitHub de cada aluno, através da URL no href="...", além de que utilizamos do target especificando um nome ou uma palavra-chave, que no caso não existe, ou está em branco.
+-->
+
+
+ <!-- Para executar o JavaScript na página do site, deve-se criar uma tag <script> chamando a URL src="script.js", que associa-se a outra documento desse projeto em construção. Ou seja, essa tag faz uma ligação entre o HTML e o JavaScrpt
+  -->
+
+  <!-- Dessa forma, como a proposta era a tentativa de reprodução do CSS e HTML ao site, o tempalte no caso, não focamos no JavaScript, que realiza algumas funções como a mudança de cor da barra de navegação.
+  --> 
+  <script src="script.js"></script>
+</body>
+
+</html>
+
+
+
