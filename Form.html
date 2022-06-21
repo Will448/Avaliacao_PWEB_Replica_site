@@ -4,11 +4,96 @@
 <head>
   <meta charset='UTF-8' />
   <title>Avaliação PWEB</title>
-</head>
-<body style="background-image:url(https://blog.dankicode.com/wp-content/uploads/2018/03/frameworks-front-end.png); background-repeat: no-repeat;background-size: cover">
-  <h2 style="text-align:center; color: white; background:gray">Obrigado pelo contato, em breve retornaremos.</h2>
-  <img src="./images/Fundo.jpg" alt="Paris" style=" border-radius: 8px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+</head>  
   
+<body>
+   <h2 style="text-align:center; color: white; ;background:gray;">Obrigado pelo contato, em breve retornaremos.
+   </h2>
+  <img src="./images/Fundo.jpg" alt="Paris" style=" border-radius: 8px; position: absolute; top: 80%; left: 20%; transform: translate(-50%, -50%);" class="pulse1"> 
+  <div class="heart1"> 
+  <div class = "heart"></div>
    <img src="https://media.graphcms.com/VAbbcgVzR6qOnpcsbmca" style=" border-radius: 16px; position: absolute;top: 8px; right: 16px; ">
+    </div>
+  <style>
+    body {
+    margin: 0;
+    background-color: lightcoral;
+}
+.heart1{
+   display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height:100vh;
+}
+.heart {
+    background: red;
+    position: absolute;
+    height: 100px;
+    width:100px;
+    /* Animation */
+    transform: rotate(-45deg) scale(1);
+    animation: pulse 1s linear infinite;
+}
+  
+  
+.heart::after {
+    /* background:blue; */
+    background:inherit;
+    border-radius: 50%; /* To make circle */
+    content:'';
+    position:absolute;
+    /* top: -100px;*/
+    top: -50%; /* Inherit properties of parent */
+    /* left: -100px; */
+    left:0;
+    height: 100px;
+    width:100px;
+}
+.heart::before {
+  /*  background:green; */
+    background:inherit; 
+    border-radius: 50%; /* To make circle */
+    content:'';
+    position:absolute;
+    top:0; 
+    right:-50%; /* Inherit properties of parent */
+    height: 100px;
+    width:100px;
+}
+  
+@keyframes pulse{
+    0% {
+        transform: rotate(-45deg) scale(1);
+        opacity: 0;
+    }/*
+    10% {
+        transform: rotate(-45deg) scale(1.3);
+    }
+    20% {
+        transform: rotate(-45deg) scale(0.9);
+    }
+    30% {
+        transform: rotate(-45deg) scale(1.2);
+    }
+    40% {
+        transform: rotate(-45deg) scale(0.9);
+    }*/
+    50% {
+        transform: rotate(-45deg) scale(1.3);
+        opacity: 1;
+    }/*
+    60% {
+        transform: rotate(-45deg) scale(0.95);
+    }
+    70% {
+        transform: rotate(-45deg) scale(1);
+    } */
+    100% {
+        transform: rotate(-45deg) scale(1);
+        opacity: 1;
+    }
+}
+  </style>
 </body>
 </html>
+
