@@ -625,10 +625,8 @@ d) transform: translate(-50%,-50%); --> é necessário para que o centro do elem
 
 /* Titulo Portfolio*/
 .tituloPortfolio{
-position: absolute;
-top: 270%;
-left: 50%;
-transform: translate(-50%,-50%);
+padding: 170px 0 0;
+text-align:center;
 }
 
 /* Classe: .port
@@ -636,14 +634,12 @@ transform: translate(-50%,-50%);
 a) letter-spacing: 10px; --> está definindo o espaçamento entre as letras.
 b) color: #fff; --> está definindo a cor da fonte.
 c) font-size: 36px; --> está definindo o tamanho da fonte.
-d) top: 30%; --> está definindo o posicionamento vertical.
-e) left: 43%; --> está definindo o posicionamento relacionado à esquerda.
 */
 
 .port{
   letter-spacing: 10px;
   color: #fff;
-  font-size: 36px
+  font-size: 36px; 
   
 }
 
